@@ -1,4 +1,4 @@
-/* -------- FULLSCREEN IMAGE VIEWER -------- */
+/* -------- FULLSCREEN IMAGE VIEWER ПК -------- */
 
 .viewer {
   position: fixed;
@@ -19,8 +19,8 @@
 }
 
 .viewer img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 80%;
+  max-height: 80%;
   border-radius: 14px;
   box-shadow: 0 0 40px rgba(0,0,0,0.7);
   animation: zoomIn 0.3s ease;
