@@ -46,8 +46,13 @@
     </footer>
   </div>
 
+  <!-- FULLSCREEN VIEWER -->
+  <div id="img-viewer" class="viewer hidden">
+    <span class="close-btn">&times;</span>
+    <img id="viewer-img" src="" alt="preview">
+  </div>
+
   <script>
-    // Автообновление года
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Анимация появления карточек
@@ -61,6 +66,23 @@
     }, {threshold: 0.1});
 
     document.querySelectorAll('.card').forEach(card => observer.observe(card));
+
+    // Fullscreen viewer
+    const viewer = document.getElementById("img-viewer");
+    const viewerImg = document.getElementById("viewer-img");
+    const closeBtn = document.querySelector(".close-btn");
+
+    document.querySelectorAll(".thumb").forEach(img => {
+      img.addEventListener("click", () => {
+        viewerImg.src = img.src;
+        viewer.classList.remove("hidden");
+      });
+    });
+
+    closeBtn.addEventListener("click", () => viewer.classList.add("hidden"));
+    viewer.addEventListener("click", (e) => {
+      if (e.target === viewer) viewer.classList.add("hidden");
+    });
   </script>
 </body>
 </html>

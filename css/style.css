@@ -63,7 +63,6 @@ header{
 
 .socials a:hover{color:var(--accent)}
 
-/* ---- Masonry Grid ---- */
 .grid {
   column-count: 3;
   column-gap: var(--gap);
@@ -107,4 +106,47 @@ footer{
   text-align:center;
   color:var(--muted);
   font-size:14px;
+}
+
+/* -------- FULLSCREEN IMAGE VIEWER -------- */
+
+.viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.viewer.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.7);
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 48px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 300;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.15);
+  color: var(--accent);
 }
